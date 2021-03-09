@@ -1,0 +1,13 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}New Entry{% endblock %}
+
+{% block body %} 
+    <form action="{% url 'newentry' %}" method="POST">
+        <div class="d-flex flex-column align-items-center">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" class="mt-2 w-25 p-2">
+        </div>
+    </form>
+{% endblock %}
